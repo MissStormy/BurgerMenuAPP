@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BurgerCtrl implements Initializable {
+    //Esqueleto basico de la aplicación
     @FXML
     private ToggleGroup BurgerGroup;
 
@@ -39,6 +40,7 @@ public class BurgerCtrl implements Initializable {
 
     @FXML
     private ChoiceBox<String> chxBarbacoa;
+    //Para generar los datos a introducir en el ChoiceBox, generamos un array
     private String[] cantidad = {"0","1","2","3"};
 
     @FXML
@@ -106,13 +108,13 @@ public class BurgerCtrl implements Initializable {
 
     @FXML
     private TextField txtPrecio;
-
+    //Aqui empiezan los metodos especificos
     @FXML
     void OnClickCalcular(ActionEvent event) {
         double precio = 8;
         double precioIVA = 0;
         double precioPVP = 0;
-
+        //Pop up de información
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Tus elecciones");
         alert.setContentText("Hamburguesa: " + ((RadioButton)BurgerGroup.getSelectedToggle()).getText()
@@ -199,10 +201,10 @@ public class BurgerCtrl implements Initializable {
             precio = precio-(precio*0.20);
         }
 
-
+        //Calculo de impuestos
         precioIVA = precio*0.21;
         precioPVP = precio + precioIVA;
-
+        //Pasamos los datos por los txt
         txtPrecio.setText("" + precio);
         txtIVA.setText("" + precioIVA);
         txtPVP.setText("" + precioPVP);
@@ -210,6 +212,7 @@ public class BurgerCtrl implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Al inicializar, los datos de las salsas se colocan en sus lugares correspondientes
         chxBarbacoa.getItems().addAll(cantidad);
         chxKetchup.getItems().addAll(cantidad);
         chxMostaza.getItems().addAll(cantidad);
