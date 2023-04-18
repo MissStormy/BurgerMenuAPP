@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="512.0" styleClass="body" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.burgermenuapp.burgermenuapp.BurgerCtrl">
+   <children>
+      <ImageView blendMode="SRC_ATOP" fitHeight="584.0" fitWidth="633.0" layoutX="50.0" layoutY="77.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/burger.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="243.0" layoutY="481.0" text="IVA" />
+      <Label layoutX="136.0" layoutY="35.0" stylesheets="@../../../CSS/style.css" text="Menu Basico (8 euros):" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="63.0" layoutY="77.0" prefHeight="140.0" prefWidth="387.0" styleClass="gridpane" stylesheets="@../../../CSS/style.css">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Hamburguesa">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Pan" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Patatas" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rnbPollo" mnemonicParsing="false" selected="true" text="Pollo" GridPane.rowIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="BurgerGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rnbCerdo" mnemonicParsing="false" text="Cerdo" toggleGroup="$BurgerGroup" GridPane.rowIndex="2" />
+            <RadioButton fx:id="rnbTernera" mnemonicParsing="false" text="Ternera (+1$)" toggleGroup="$BurgerGroup" GridPane.rowIndex="3" />
+            <RadioButton fx:id="rnbVegana" mnemonicParsing="false" text="Vegana (+1$)" toggleGroup="$BurgerGroup" GridPane.rowIndex="4" />
+            <RadioButton fx:id="rnbNormal" mnemonicParsing="false" selected="true" text="Normal" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="PanGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rnbIntegral" mnemonicParsing="false" text="Integral" toggleGroup="$PanGroup" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <RadioButton fx:id="rnbCenteno" mnemonicParsing="false" text="Centeno" toggleGroup="$PanGroup" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <RadioButton fx:id="rnbFritas" mnemonicParsing="false" selected="true" text="Fritas" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="PatataGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rnbGajo" mnemonicParsing="false" text="Gajo" toggleGroup="$PatataGroup" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <RadioButton fx:id="rnbCaseras" mnemonicParsing="false" text="Caseras (+1$)" toggleGroup="$PatataGroup" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="63.0" layoutY="225.0" prefHeight="53.0" prefWidth="387.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Bebida">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rnbCola" mnemonicParsing="false" selected="true" text="Cola" GridPane.rowIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="DrinkGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rnbNaranja" mnemonicParsing="false" text="Naranja" toggleGroup="$DrinkGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <RadioButton fx:id="rnbLimon" mnemonicParsing="false" text="Limon" toggleGroup="$DrinkGroup" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <RadioButton fx:id="rnbAgua" mnemonicParsing="false" text="Agua" toggleGroup="$DrinkGroup" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <RadioButton fx:id="rnbCerveza" mnemonicParsing="false" text="Cerveza" toggleGroup="$DrinkGroup" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="63.0" layoutY="302.0" prefHeight="90.0" prefWidth="387.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="254.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="133.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Opciones extra/adicionales">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Salsas (+0.5)" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Ketchup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Mostaza" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Barbacoa" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <CheckBox fx:id="chbDoble" mnemonicParsing="false" text="Hamburguesa doble (+2$)" GridPane.rowIndex="1" />
+            <CheckBox fx:id="chbQueso" mnemonicParsing="false" text="Extra de queso (+0.5)" GridPane.rowIndex="2" />
+            <CheckBox fx:id="chbPatatas" mnemonicParsing="false" text="Extra de patatas (+1$)" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="chxKetchup" prefHeight="22.0" prefWidth="52.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="70.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <ChoiceBox fx:id="chxMostaza" prefHeight="22.0" prefWidth="52.0" value="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="70.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <ChoiceBox fx:id="chxBarbacoa" prefHeight="22.0" prefWidth="52.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="70.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+         </children>
+      </GridPane>
+      <GridPane layoutX="63.0" layoutY="402.0" prefHeight="29.0" prefWidth="387.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <RadioButton fx:id="rnbDomicilio" mnemonicParsing="false" selected="true" text="Reparto a domicilio">
+               <toggleGroup>
+                  <ToggleGroup fx:id="RepartoGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rnbLocal" mnemonicParsing="false" text="Recogida en local (20% desc)" toggleGroup="$RepartoGroup" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="btCalcular" layoutX="223.0" layoutY="442.0" mnemonicParsing="false" onAction="#OnClickCalcular" stylesheets="@../../../CSS/style.css" text="Calcular" />
+      <Label layoutX="77.0" layoutY="481.0" text="Precio" />
+      <Label />
+      <Label layoutX="401.0" layoutY="481.0" text="P.V.P" />
+      <TextField fx:id="txtPVP" layoutX="381.0" layoutY="505.0" prefHeight="22.0" prefWidth="69.0" />
+      <TextField fx:id="txtIVA" layoutX="219.0" layoutY="505.0" prefHeight="22.0" prefWidth="69.0" />
+      <TextField fx:id="txtPrecio" layoutX="64.0" layoutY="505.0" prefHeight="22.0" prefWidth="60.0" />
+      <Line endX="197.0" layoutX="253.0" layoutY="69.0" startX="-196.0" stroke="WHITE" />
+      <Line endX="197.0" layoutX="253.0" layoutY="225.0" startX="-196.0" stroke="WHITE" />
+      <Line endX="197.0" layoutX="253.0" layoutY="290.0" startX="-196.0" stroke="WHITE" />
+      <Line endX="197.0" layoutX="255.0" layoutY="402.0" startX="-196.0" stroke="WHITE" />
+      <Line endX="197.0" layoutX="253.0" layoutY="431.0" startX="-196.0" stroke="WHITE" />
+   </children>
+</AnchorPane>
